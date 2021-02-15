@@ -8,7 +8,7 @@ int main (){
 	cout << "It is Vowel";
 	}
 	else{
-	cout << "It is Consonant ";
+	cout << "It is Consonant.";
 	}
 	cout << endl;
 	return 0;
