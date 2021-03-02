@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-
+#include<algorithm>
 using namespace std;
 
 int main(){
@@ -91,7 +91,10 @@ int main(){
   int y = 786;
   cout << to_string(y) + "1" << endl;
 
+  // Sorting String;
+  string x1 = "xsafjbkervnoirwhvqavdsvjhnvsbvihsug";
+  sort(x1.begin(), x1.end());
+  cout << x1 << endl;
   
   return 0;
-
 }
