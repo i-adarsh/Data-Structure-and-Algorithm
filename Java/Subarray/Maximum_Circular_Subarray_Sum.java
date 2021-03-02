@@ -1,3 +1,5 @@
+package Subarray;
+
 import java.util.Scanner;
 
 // Max  Subarray Sum = Total sum of Array - Sum of non-contributing elements

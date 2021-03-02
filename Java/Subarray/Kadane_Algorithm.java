@@ -1,3 +1,5 @@
+package Subarray;
+
 import java.util.Scanner;
 
 public class Kadane_Algorithm {

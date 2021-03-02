@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Questions;
 
+import java.util.Scanner;
 public class Smallest_Positive_Missing_Number {
     public static void main(String [] args){
         Scanner scanner = new Scanner(System.in);
@@ -25,6 +26,7 @@ public class Smallest_Positive_Missing_Number {
         for (int i = 0; i < n ; i++){
             if (brr[i] == false){
                 ans = i;
+                break;
             }
         }
         System.out.println(ans);

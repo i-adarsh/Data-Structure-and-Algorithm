@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Questions;
 
+import java.util.Scanner;
 public class First_Repeating_Element {
     public static void main(String [] args) {
         Scanner kb = new Scanner(System.in);

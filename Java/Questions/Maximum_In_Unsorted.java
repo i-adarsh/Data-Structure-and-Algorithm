@@ -1,3 +1,5 @@
+package Questions;
+
 import java.util.Scanner;
 /*
 * To Find the Maximum Number in a Unsorted Array O(n)

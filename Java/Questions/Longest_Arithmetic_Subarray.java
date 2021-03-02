@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Questions;
 
+import java.util.Scanner;
 public class Longest_Arithmetic_Subarray {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);

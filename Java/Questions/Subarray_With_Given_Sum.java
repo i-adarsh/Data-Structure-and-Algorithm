@@ -1,5 +1,6 @@
-import java.util.Scanner;
+package Questions;
 
+import java.util.Scanner;
 public class Subarray_With_Given_Sum {
     public static void main(String [] args){
         Scanner kb = new Scanner(System.in);
@@ -24,8 +25,9 @@ public class Subarray_With_Given_Sum {
                 i++;
             }
             if (sum == finalSum){
-                start = i+1;
+                start = i + 1;
                 end = j;
+                break;
             }
             j++;
         }
