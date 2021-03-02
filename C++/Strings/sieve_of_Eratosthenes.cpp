@@ -25,10 +25,7 @@ void sieveOfEratosthenes(int n){
 int main(){
 
     int n;
-
     cin >> n;
-
     sieveOfEratosthenes(n);
-
     return 0;
 }
