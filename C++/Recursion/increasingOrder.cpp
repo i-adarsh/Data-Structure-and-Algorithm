@@ -8,7 +8,6 @@ void increasing (int n, int a = 1){
   }
   cout << a << " ";
   increasing(n, ++a);
-
  }
 
 int main () {
