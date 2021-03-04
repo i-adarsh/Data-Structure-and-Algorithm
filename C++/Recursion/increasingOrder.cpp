@@ -1,18 +1,19 @@
 #include<iostream>
 using namespace std;
 
-void increasing (int n){
+void increasing (int n, int a = 1){
 
-  if ( n == 1 ){
-    cout << n;
+  if ( a > n){
+    return;
   }
-
-  
+  cout << a << " ";
+  increasing(n, ++a);
 
  }
 
 int main () {
-
-
+  int n;
+  cin >> n;
+  increasing(n);
   return 0;
 }
