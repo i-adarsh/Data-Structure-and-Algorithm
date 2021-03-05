@@ -17,6 +17,8 @@ int firstOcc(int arr[], int n, int i, int key){
 
 int main () {
   int arr[] = {4,2,5,6,7,8,3,5};
-  cout << firstOcc(arr, 8, 0, 5) << endl;
+  int key = 0;
+  cin >> key;
+  cout << firstOcc(arr, 8, 0, key) << endl;
   return 0;
 }
