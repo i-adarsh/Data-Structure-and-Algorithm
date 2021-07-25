@@ -1,0 +1,1 @@
+{"name":"Local: PrintAllPermutations","url":"/Users/adarshkumar/Documents/Data_Structure/C++/Permutations/PrintAllPermutations.cpp","tests":[{"id":1617247771793,"input":"3\n1 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/adarshkumar/Documents/Data_Structure/C++/Permutations/PrintAllPermutations.cpp","group":"local","local":true}
