@@ -220,6 +220,45 @@ node* kappend(node* &head, int k){
     return newHead;
 }
 
+bool intersection(node* &head1, node* &head2){
+    node* temp1 = head1;
+    node* temp2 = head2;
+    
+    int l1 = length(temp1);
+    int l2 = length(temp2);
+    temp1 = head1;
+    temp2 = head2;
+    if (l1 > l2){
+        int count = 0;
+        while(count <= (l1 - l2)){
+            temp1 = temp1->next;
+            count++;
+        }
+        temp2 = temp2->next;
+    }
+    else{
+        int count = 0;
+        while(count <= (l2 - l1)){
+            temp2 = temp2->next;
+            count++;
+        }
+        temp1 = temp1->next;
+    }
+    // cout << temp1->data << " --> " << endl;
+    // cout << temp2->data << " --> " << endl;
+    while(temp1 != NULL && temp2 != NULL){
+        // cout << temp1->data << " --> " << temp2->data << endl;
+        if (temp1->next != NULL && temp2->next != NULL){
+            if(temp1->next->data == temp2->next->data){
+                return true;
+        }
+        }
+        temp1 = temp1->next;
+        temp2 = temp2->next;
+    }
+    return false;
+}
+
 void display(node* head){
     node *temp = head;
     while (temp != NULL)
@@ -256,5 +295,15 @@ int main() {
     // dispaly(reverseRecursive(head));
     // dispaly(reverseK(head,2));
     display(kappend(head, 3));
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    int arr2[] = {9, 10, 5, 6};
+    node *head1, *head2;
+    for (int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++){
+        insertAtTail(head1, arr[i]);
+    }
+    for (int i = 0; i < sizeof(arr2)/sizeof(arr2[0]); i++){
+        insertAtTail(head2, arr2[i]);
+    }
+    cout << intersection(head1, head2) << endl;
     return 0;
 }
