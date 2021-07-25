@@ -44,16 +44,34 @@ void display(node* &head){
     cout << "NULL" << endl;
 }
 
-node* oddEven(node* &head){
+void evenAfterOdd(node* &head){
     // Put Even Position Nodes after Odd Position Nodes
+    node* temp = head;
+    node* odd = head;
+    node* evenStart = head->next;
+    node* even = head->next;
+    while(odd->next != NULL && even->next != NULL){
+        odd->next = even->next;
+        odd = odd->next;
+
+        even->next = odd->next;
+        even = even->next;
+    }
+    odd->next = evenStart;
+    if (odd->next != NULL){
+        even->next = NULL;
+    }
 }
 
 int main(){
     node* head = NULL;
-    insertAtHead(head, 1);
-    insertAtHead(head, 2);
-    insertAtHead(head, 3);
-    insertAtHead(head, 4);
-    insertAtHead(head, 5);
-    insertAtHead(head, 6);
+    insertAtTail(head, 1);
+    insertAtTail(head, 2);
+    insertAtTail(head, 3);
+    insertAtTail(head, 4);
+    insertAtTail(head, 5);
+    insertAtTail(head, 6);
+    display(head);
+    evenAfterOdd(head);
+    display(head);
 }
