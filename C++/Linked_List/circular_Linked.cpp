@@ -62,8 +62,8 @@ void deleteNode(node* &head, int pos){
         return;
     }
     node* temp = head;
-    int count = 2;
-    while (temp != NULL && count < pos){
+    int count = 1;
+    while (temp != NULL && count < pos - 1){
         count++;
         temp = temp->next;
     }
