@@ -1,5 +1,93 @@
-// Insert at Tail
-// Insert at Head 
-// display
-// Delete Node 
-// Delete At Head
+#include<iostream>
+using namespace std;
+
+class node {
+    public:
+        int data;
+        node *next;
+
+        node(int val){
+            data = val;
+            next = NULL;
+        }
+};
+
+void insertAtHead(node* &head, int val){
+    node *n = new node(val);
+    if (head == NULL){
+        n->next = n;
+        head = n;
+        return;
+    }
+    node* temp = head;
+    while(temp->next != head){
+        temp = temp->next;
+    }
+    temp->next = n;
+    n->next = head;
+    head = n;
+}
+
+void insertAtTail(node* &head, int val){
+    if (head == NULL){
+        insertAtHead(head, val);
+        return;
+    }
+    node* n = new node(val);
+    node* temp = head;
+    while(temp->next != head){
+        temp = temp->next;
+    }
+    temp->next = n;
+    n->next = head;
+}
+
+void deleteAtHead(node* &head){
+    node* temp = head;
+    if (temp->next == head){
+        head = NULL;
+        return;
+    }
+    node* newHead = head->next;
+    while(temp->next != head){
+        temp = temp->next;
+    }
+    temp->next = newHead;
+    head = newHead;
+}
+
+void deleteNode(node* &head, int pos){
+    if (pos == 1){
+        deleteAtHead(head);
+        return;
+    }
+    node* temp = head;
+    int count = 2;
+    while (temp != NULL && count < pos){
+        count++;
+        temp = temp->next;
+    }
+    temp->next = temp->next->next;
+}
+
+void display(node* head){
+    node *temp = head;
+    do{
+        cout << temp->data << " --> ";
+        temp = temp->next;
+    } while (temp != head);
+    cout << "NULL" << endl;
+}
+
+int main(){
+    node *head = NULL;
+    insertAtTail(head, 1);
+    insertAtTail(head, 2);
+    insertAtTail(head, 3);
+    insertAtTail(head, 4);
+    insertAtTail(head, 5);
+    display(head);
+    deleteNode(head, 5);
+    display(head);
+    return 0;
+}

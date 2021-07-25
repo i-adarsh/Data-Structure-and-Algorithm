@@ -125,4 +125,5 @@ int main (){
     // deleteNode(head, 4);
     deleteNode(head, 3);
     display(head);
+    return 0;
 }

@@ -271,8 +271,7 @@ void intersect(node *&head1, node *&head2, int pos){
     temp2->next = temp1;
 }
 
-    int intersection(node *&head1, node *&head2)
-{
+int intersection(node *&head1, node *&head2){
     int l1 = length(head1);
     int l2 = length(head2);
     int d = 0;
