@@ -16,7 +16,7 @@ int prefixEvaluation (string s){
             st.pop();
             int operand2 = st.top();
             st.pop();
-            
+
             switch (s[i])
             {
             case '+':
@@ -27,6 +27,9 @@ int prefixEvaluation (string s){
                 break;
             case '*':
                 st.push(operand1 * operand2);
+                break;
+            case '^':
+                st.push(pow(operand1, operand2));
                 break;
             case '/':
                 st.push(operand1 / operand2);
