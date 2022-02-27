@@ -22,11 +22,13 @@ public class AddBinary{
     }
 
     public static void main(String [] args){
-        String a = "1111";
-        String b = "111";
-        long alen = a.length();
-        long blen = b.length();
-        int count = 0;
+        String a = "11";
+		String b = "1";
+		int sum = 0;
+		String res = "";
+		int al = a.length();
+		int bl = b.length();
+		int carry = 0; 
         while((al > 0 && bl > 0)) {
 			int d1 = Integer.parseInt(String.valueOf(a.charAt(al - 1)));
 			int d2 = Integer.parseInt(String.valueOf(b.charAt(bl - 1)));
