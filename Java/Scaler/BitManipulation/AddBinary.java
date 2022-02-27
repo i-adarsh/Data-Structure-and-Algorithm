@@ -20,7 +20,7 @@ public class AddBinary{
             ans.append(carry);
         return ans.reverse().toString();
     }
-    
+
     public static void main(String [] args){
         String a = "1111";
         String b = "111";
@@ -59,6 +59,5 @@ public class AddBinary{
 			res = "1" + res;
 		}
 		System.out.println(res);
-        System.out.println("Hello");
     }
 }
