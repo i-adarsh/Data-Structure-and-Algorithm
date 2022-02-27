@@ -3,9 +3,10 @@ public class RotateArrayByK {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
         // int [] arr = {3,2,9,6,5,8};
-        int [] arr = {1,2,3,4,5,6,7,8,9,10,11,12};
+        // int [] arr = {1,2,3,4,5,6,7,8,9,10,11,12};
+        int [] arr = {2,4,6,8,10,12,14,16,18,20};
         // int [] arr = {1,2};
-        int n = 3, k = 4;
+        int n = 3, k = 3;
         k = k % arr.length;
         swap(arr, 0, arr.length-1);
         swap(arr, 0, (k-1));
