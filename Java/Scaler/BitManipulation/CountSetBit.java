@@ -6,7 +6,7 @@ public class CountSetBit{
 
     public static int countSetBitLoop(int n){
         int count = 0;
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i <= 30; i++){
             if (checkBit(n, i)){
                 count++;
             }
