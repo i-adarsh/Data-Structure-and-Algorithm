@@ -19,7 +19,6 @@ int binarySearch(int arr[], int key, int n ){
 		}
 	}
 	return -1;
-	
 }
 
 int main (){
@@ -33,5 +32,4 @@ int main (){
 	cin >> key;
 	cout << binarySearch(arr, key, n);
 	return 0;
-
 }
