@@ -26,7 +26,7 @@ public class CountSetBit{
     }
 
     public static void main(String[] args){
-        System.out.println(countSetBit(25));
-        System.out.println(countSetBitLoop(25));
+        System.out.println(countSetBit(9000));
+        System.out.println(countSetBitLoop(9000));
     }
 }
