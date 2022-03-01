@@ -17,11 +17,11 @@ public class TwoElementsAppears{
             sum = sum ^ a;
         }
         int pos = 0;
-        while(sum > 0){
-            if (setBits(sum, pos)){
+        for(int i = 0; i <= 31; i++){
+            if (setBit(n, i)){
+                pos = i;
                 break;
             }
-            pos++;
         }
         int set = 0, unset = 0; 
         for(int a : A){
