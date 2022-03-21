@@ -14,38 +14,27 @@ public class EquilibriumIndex{
     }
 
     public static int solve(int[] A) {
-        int count = 0;
-        int [] left = new int[A.length];
-        int [] right = new int[A.length];
-        for (int i = 0; i < A.length; i++){
-            if (i == 0){
-                left[i] = 0;
-            }
-            else {
-                left[i] = left[i - 1] + A[i - 1];
-            }
+        int [] pf = new int[A.length];
+        int n = A.length;
+        int index = 0;
+        pf[0] = A[0];
+        for (int i = 1; i < A.length; i++){
+            pf[i] = pf[i-1] + A[i];
         }
-        for (int i = A.length - 1; i >= 0; i--){
-            if (i == A.length - 1){
-                right[A.length - 1] = 0;
-            }
-            else{
-                right[i] = right[i+1] + A[i+1];
-            }
+        if(0 == (pf[n - 1] - A[0])){
+            return index;    
         }
-        for (int j = 0; j < A.length; j++){
-            System.out.print(left[j] + " ");
+        for (int i = 1; i < n; i++){
+            int left = pf[i-1];
+            int right = pf[n - 1] - pf[i];
+            if (left == right){
+                index = i;
+                break;
+            }   
         }
-        System.out.println();
-        for (int j = 0; j < A.length; j++){
-            System.out.print(right[j] + " ");
+        if (index == 0){
+            index = -1;
         }
-        System.out.println();
-        for (int i = 0; i < A.length; i++){
-            if (left[i] == right[i]){
-                count++;
-            }
-        }
-        return count;
+        return index;
     }
 }
