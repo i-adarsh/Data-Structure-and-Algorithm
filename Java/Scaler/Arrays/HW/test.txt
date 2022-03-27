@@ -1,0 +1,72 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    static boolean checkElement(HashSet h, long a, long b){
+        if (h.contains(a + b)){
+            if(h.contains(a - b)){
+                if (h.contains(a/b)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		boolean flag = true;
+		long secondRoot = 0, firstRoot = 0;
+		while (t > 0){
+		    int [] arr = new int[4];
+		    HashSet<Long> h = new HashSet<>();
+		    for (int i = 0; i < 4; i++){
+		        arr[i] = sc.nextInt();
+		        h.add((long)arr[i]);
+		    }
+		    if (flag){
+		        Arrays.sort(arr);
+		        secondRoot = 0; firstRoot = 0;
+		        long a = 1, b = -(arr[2]), c = (arr[3]);
+		        long determinant = (b*b)-(4*a*c);
+                long sqrt = (long)Math.sqrt(determinant);
+                firstRoot = (-b + sqrt)/(2*a);
+                secondRoot = (-b - sqrt)/(2*a);
+                firstRoot = Math.abs(firstRoot);
+                secondRoot = Math.abs(secondRoot);
+                if (firstRoot * secondRoot == c){
+                    if(checkElement(h, Math.min(firstRoot, secondRoot), Math.max(firstRoot, secondRoot))){
+                        System.out.println(Math.min(firstRoot, secondRoot) + " " + Math.max(firstRoot, secondRoot));
+                    }
+                    else{
+                        System.out.println(-1 + " " + -1);
+                    }
+                }
+		        else{
+		            secondRoot = 0; firstRoot = 0;
+		            b = -(arr[3]); c = (arr[2]);
+    		        determinant = (b*b)-(4*a*c);
+                    sqrt = (long)Math.sqrt(determinant);
+                    firstRoot = (-b + sqrt)/(2*a);
+                    secondRoot = (-b - sqrt)/(2*a);
+                    firstRoot = Math.abs(firstRoot);
+                    secondRoot = Math.abs(secondRoot);
+                    if(checkElement(h, Math.min(firstRoot, secondRoot), Math.max(firstRoot, secondRoot))){
+                        System.out.println(Math.min(firstRoot, secondRoot) + " " + Math.max(firstRoot, secondRoot));
+                    }
+                    else{
+                        System.out.println(-1 + " " + -1);
+                    }
+		        }
+		    }
+		    t--;
+		}
+	}
+}

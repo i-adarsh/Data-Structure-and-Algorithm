@@ -2,57 +2,88 @@ public class Array2D{
     public static void main(String [] args){
         int [][] mat = {{-2,1,6,3},{2,9,3,8},{3,-1,3,4}};
         int [][] m2 = {{7,15,9,23,21},{31,2,27,3,6},{24,4,10,17,29},{17,16,20,13,12},{8,7,5,14,1}};
-        rowSum(mat);
-        colSum(mat);
-        lDiagonal(m2);
-        rDiagonal(m2);
-        rlDiagonal(mat);
-        for (int [] a : m2){
-            for (int i : a){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
-        transposeInplace(m2);
-        for (int [] a : m2){
-            for (int i : a){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("\n=======\n");
-        for (int [] a : mat){
-            for (int i : a){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
-        int [][] res = transpose(mat);
-        System.out.println("\n=======\n");
-        for (int [] a : res){
-            for (int i : a){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
-        System.out.println("\n=======\n");
-        for (int [] a : mat){
-            for (int i : a){
-                System.out.print(i + " ");
-            }
-            System.out.println();
-        }
+        // rowSum(mat);
+        // colSum(mat);
+        // lDiagonal(m2);
+        // rDiagonal(m2);
+        // rlDiagonal(mat);
+        // for (int [] a : m2){
+        //     for (int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // transposeInplace(m2);
+        // for (int [] a : m2){
+        //     for (int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // System.out.println("\n=======\n");
+        // for (int [] a : mat){
+        //     for (int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // int [][] res = transpose(mat);
+        // System.out.println("\n=======\n");
+        // for (int [] a : res){
+        //     for (int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // System.out.println("\n=======\n");
+        // for (int [] a : mat){
+        //     for (int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // // int [][] rotate = rotate90ByAdarsh(mat);
         // int [][] rotate = rotate90ByAdarsh(mat);
-        int [][] rotate = rotate90ByAdarsh(mat);
-        System.out.println();
-        for (int a[] : rotate){
+        // System.out.println();
+        // for (int a[] : rotate){
+        //     for(int i : a){
+        //         System.out.print(i + " ");
+        //     }
+        //     System.out.println();
+        // }
+        // System.out.println("\n=======\n");
+        // rotateBy90(m2);
+        int [][] m3 = {{1,2,3},{4,5,6},{7,8,9}};
+        int [][] dia = diagonal(m3);
+        for(int [] a : dia){
             for(int i : a){
                 System.out.print(i + " ");
             }
             System.out.println();
         }
-        System.out.println("\n=======\n");
-        rotateBy90(m2);
+    }
+
+    static int[][] diagonal(int[][] A) {
+        int[][] res = new int[2*A.length - 1][A.length];
+        for (int i = 0; i < A.length; i++){
+            int j = i;
+            int k = 0;
+            while(j >= 0 && k < A.length){
+                res[i][k] = A[k][j];
+                k++;
+                j--;
+            }
+        }
+        for (int i = 1; i < A.length; i++){
+            int j = i;
+            int k = A.length-1;
+            while (j < A.length && k >= 0){
+                res[j+k][j-i] = A[j][k];
+                j++;
+                k--;
+            }
+        }
+        return res;
     }
 
     static int[][] rotate90ByAdarsh(int [][] mat){
