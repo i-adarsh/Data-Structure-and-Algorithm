@@ -1,9 +1,12 @@
 public class ABModulo{
     public static void main(String [] args){
         System.out.println(solve(5, 10));
+        System.out.println(213^87);
+        System.out.println(128^2);
+        System.out.println(531^657);
     }
 
-    public int solve(int A, int B) {
+    public static int solve(int A, int B) {
         return (A > B ? (A - B) : (B - A));
     }
 
