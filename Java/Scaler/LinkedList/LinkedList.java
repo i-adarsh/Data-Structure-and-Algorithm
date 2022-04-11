@@ -24,9 +24,6 @@ public class LinkedList{
             else if (s[0].equals("d")){
                 delete_node(Integer.parseInt(s[1]+""));
             }
-            else if (s[0].equals("l")){
-                length();
-            }
             else{
                 print_ll();
             }
@@ -46,15 +43,16 @@ public class LinkedList{
             head = node;
         }
         else{
-            
-            Node node = new Node(value);
-            // System.out.println("hii");
-            Node temp = head;
-            while ((position - 1) > 0 && temp.next != null){
-                temp = temp.next;
-                position--;
+            int count = 0;
+            while (count < (position - 1)){
+                count++;
             }
-            // System.out.println(temp.next);
+            Node node = new Node(value);
+            Node temp = head;
+            while(count > 1){
+                temp = temp.next;
+                count--;
+            }
             node.next = temp.next;
             temp.next = node;
         }
@@ -62,37 +60,41 @@ public class LinkedList{
     }
 
     public static void delete_node(int position) {
-        if (position > (length+1)){
+        if (position > length){
             return;
         }
-        // @params position, integer
+        int count = 0;
+        while (count < (position - 1)){
+            count++;
+        }
         if (position == 1){
             head = head.next;
         }
+        // @params position, integer
         else{
             Node temp = head;
-            while((position - 1) > 1 && temp.next != null){
+            while(count > 1){
                 temp = temp.next;
-                position--;
+                count--;
             }
-            if (temp.next.next != null ){
-                temp.next = temp.next.next;
-            }
-            else{
-                temp.next = null;
-            }
+            temp.next = temp.next.next;
         }
         length--;
     }
 
     public static void print_ll() {
         // Output each element followed by a space
-        Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+        if (length == 0){
+            return;
         }
-        System.out.println();
+        else{
+            Node temp = head;
+            while(temp.next != null){
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.print(temp.data);
+        }
     }
 }
 
