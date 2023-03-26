@@ -1,0 +1,7 @@
+Thank you for your invitation to interview Pre-Joining Session for TSE role
+
+Yes, I am available on
+
+Then add 8 button widgets to control the 8 relays. Here I have used virtual pins gp1, gp2, gp3, gp4, gp5, gp6, gp7, gp8 for 8 buttons. And mode will be Switch.
+
+

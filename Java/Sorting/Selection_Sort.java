@@ -32,5 +32,7 @@ public class Selection_Sort {
             System.out.print(arr[i]+" ");
         }
 
+        scanner.close();
+
     }
 }
